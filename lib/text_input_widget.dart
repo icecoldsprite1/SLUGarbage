@@ -36,6 +36,10 @@ class TextInputWidget extends StatelessWidget {
                 tooltip: "Submit",
                 onPressed: () {
                   appState.text(controller.text);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const MyHomePage())));
                 },
               )),
         ),
