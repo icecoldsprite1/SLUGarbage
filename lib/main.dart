@@ -30,14 +30,12 @@ class MyApp extends StatelessWidget {
 
 class MyAppState extends ChangeNotifier {
   var current = '';
-
   void text(String stuff) {
     current = stuff;
     notifyListeners();
   }
 
   var names = <String>[];
-
   void toggleNames() {
     if (names.contains(current)) {
       names.remove(current);
@@ -108,15 +106,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
     );
-  }
-}
-
-class DisposalPage extends StatelessWidget {
-  const DisposalPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
 
