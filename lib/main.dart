@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:slugarbage/text_input_widget.dart';
 
 import 'home_page.dart';
-import 'info_page.dart';
+// import 'info_page.dart';
 import 'map_page.dart';
 
 void main() {
