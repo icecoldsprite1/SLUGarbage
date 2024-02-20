@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> pages = [
     const HomePage(),
     const InfoPage(),
-    MapPage(),
+    const MapPage(),
   ];
 
   void onTabTapped(int index) {
