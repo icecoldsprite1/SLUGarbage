@@ -29,7 +29,13 @@ class HomePage extends StatelessWidget {
       const SizedBox(height: 20),
       HomePageContainer(text: 'Points: ${appState.points}'),
       const SizedBox(height: 20),
-      const HomePageContainer(text: 'Recents:'),
+      const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          HomePageContainer(text: 'Recents:'),
+          SizedBox(height: 200, child: Recents()),
+        ],
+      )
     ]);
   }
 }
@@ -59,5 +65,40 @@ class HomePageContainer extends StatelessWidget {
           ],
         ),
         child: Center(child: Text(text, style: const TextStyle(fontSize: 16))));
+  }
+}
+
+class Recents extends StatelessWidget {
+  const Recents({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+    var stuff = appState.recents;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double margin = screenWidth * 0.1;
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: margin),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.3),
+            spreadRadius: 1,
+            blurRadius: 1,
+            offset: const Offset(0, 1),
+          ),
+        ],
+      ),
+      child: ListView.builder(
+        reverse: true,
+        itemCount: stuff.length,
+        itemBuilder: ((context, index) {
+          return ListTile(title: Text(stuff[index]));
+        }),
+      ),
+    );
   }
 }

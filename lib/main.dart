@@ -50,6 +50,13 @@ class MyAppState extends ChangeNotifier {
     points++;
     notifyListeners();
   }
+
+  final _recents = <dynamic>[];
+  List<dynamic> get recents => _recents;
+  void addRecent(dynamic item) {
+    recents.add(item);
+    notifyListeners();
+  }
 }
 
 class LoginPage extends StatelessWidget {
@@ -129,16 +136,14 @@ class _InfoPageState extends State<InfoPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Info Page'),
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const [
-            Tab(text: 'Landfill'),
-            Tab(text: 'Recycle'),
-            Tab(text: 'Compost'),
-          ],
-        ),
+      appBar: TabBar(
+        indicatorColor: Colors.amber,
+        controller: _tabController,
+        tabs: const [
+          Tab(text: 'Landfill'),
+          Tab(text: 'Recycle'),
+          Tab(text: 'Compost'),
+        ],
       ),
       body: TabBarView(
         controller: _tabController,
@@ -164,10 +169,11 @@ class _InfoPageState extends State<InfoPage>
             child: ElevatedButton(
               onPressed: () {
                 // Button action
-                appState.addPoints();
                 setState(() {
                   buttonText = 'Button ${index + 1} clicked!';
                 });
+                appState.addPoints();
+                appState.addRecent('Button ${index + 1}');
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
