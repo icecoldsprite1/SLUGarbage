@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:slugarbage/text_input_widget.dart';
+import 'package:slugarbage/app_state.dart';
 import 'package:slugarbage/main.dart';
+import 'package:firebase_auth/firebase_auth.dart'
+    hide EmailAuthProvider, PhoneAuthProvider;
+import 'authentication.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,6 +15,13 @@ class HomePage extends StatelessWidget {
 
     return Column(children: [
       const SizedBox(height: 20),
+      Consumer<ApplicationState>(
+        builder: (context, appState, _) => AuthFunc(
+            loggedIn: appState.loggedIn,
+            signOut: () {
+              FirebaseAuth.instance.signOut();
+            }),
+      ),
       Center(
         child: Text(
           'Hello, ${appState.current}',

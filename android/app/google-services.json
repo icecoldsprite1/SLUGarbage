@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "803543089420",
+    "project_id": "slugarbage",
+    "storage_bucket": "slugarbage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803543089420:android:487d4bbac8d25566f1c929",
+        "android_client_info": {
+          "package_name": "com.example.slugarbage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9IOZnQnnSd7LC6YDeWkhxR-8XYufEYNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
