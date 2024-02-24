@@ -4,6 +4,7 @@ import 'package:slugarbage/app_state.dart';
 import 'package:slugarbage/main.dart';
 import 'package:firebase_auth/firebase_auth.dart'
     hide EmailAuthProvider, PhoneAuthProvider;
+import 'package:slugarbage/search_bar.dart';
 import 'authentication.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,40 +14,44 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
 
-    return Column(children: [
-      const SizedBox(height: 20),
-      Consumer<ApplicationState>(
-        builder: (context, appState, _) => AuthFunc(
-            loggedIn: appState.loggedIn,
-            signOut: () {
-              FirebaseAuth.instance.signOut();
-            }),
-      ),
-      Center(
-        child: Text(
-          'Hello, ${appState.current}',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.blueGrey[900],
+    return ListView(
+      children: [
+        Column(children: [
+          const SizedBox(height: 20),
+          Consumer<ApplicationState>(
+            builder: (context, appState, _) => AuthFunc(
+                loggedIn: appState.loggedIn,
+                signOut: () {
+                  FirebaseAuth.instance.signOut();
+                }),
           ),
-        ),
-      ),
-      const SizedBox(height: 20),
-      const HomePageContainer(
-          text:
-              'Welcome to SLUGarbage. This is a place to learn about how to properly dispose of items. Start by tapping on the search icon. The map locates places where the proper disposal bin is located. Earn points by searching.'),
-      const SizedBox(height: 20),
-      HomePageContainer(text: 'Points: ${appState.points}'),
-      const SizedBox(height: 20),
-      const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          HomePageContainer(text: 'Recents:'),
-          SizedBox(height: 200, child: Recents()),
-        ],
-      )
-    ]);
+          Center(
+            child: Text(
+              'Hello, ${appState.current}',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.blueGrey[900],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          const HomePageContainer(
+              text:
+                  'Welcome to SLUGarbage. This is a place to learn about how to properly dispose of items. Start by tapping on the search icon. The map locates places where the proper disposal bin is located. Earn points by searching.'),
+          const SizedBox(height: 20),
+          HomePageContainer(text: 'Points: ${appState.points}'),
+          const SizedBox(height: 20),
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              HomePageContainer(text: 'Recents:'),
+              SizedBox(height: 200, child: Recents()),
+            ],
+          ),
+        ]),
+      ],
+    );
   }
 }
 
