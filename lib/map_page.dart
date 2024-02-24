@@ -16,16 +16,42 @@ class _MapPageState extends State<MapPage> with OSMMixinObserver {
     unFollowUser: false,
   ));
 
-  print() async {
-    var text = await mapController.getCurrentPositionAdvancedPositionPicker();
-    Text("$text");
-    // throw UnimplementedError();
+  // prints location
+  print(String s) async {
+    if (s == "") {
+      var s = await mapController.getCurrentPositionAdvancedPositionPicker();
+      Text("$s");
+    } else {
+      Text(s);
+    }
   }
 
+  // add mapController observer/listeners
   @override
   void initState() {
     super.initState();
     mapController.addObserver(this);
+
+    mapController.listenerMapSingleTapping.addListener(() async {
+      if (mapController.listenerMapSingleTapping.value != null) {
+        // On single tap of the map, get the position of the tap and add a marker there
+        var position = mapController.listenerMapSingleTapping.value;
+        if (position != null) {
+          await mapController.addMarker(position,
+              markerIcon: const MarkerIcon(
+                  icon: Icon(
+                Icons.location_on,
+                color: Colors.blue,
+                size: 60,
+              ))
+              // angle: 1.1,
+              // iconAnchor: IconAnchor(
+              //   anchor: Anchor.top,
+              // )
+              );
+        }
+      }
+    });
     // WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
 
     // });
@@ -34,7 +60,7 @@ class _MapPageState extends State<MapPage> with OSMMixinObserver {
   @override
   Future<void> mapIsReady(bool isReady) async {
     if (isReady) {
-      /// put you logic
+      print("Map is Ready");
     }
   }
 
@@ -42,14 +68,13 @@ class _MapPageState extends State<MapPage> with OSMMixinObserver {
   Future<void> mapRestored() async {
     super.mapRestored();
 
-    /// TO DO
+    print("Map is Restored");
   }
 
+  // Single tap on marker
   @override
   void onSingleTap(GeoPoint position) {
     super.onSingleTap(position);
-
-    /// TO DO
   }
 
   @override
@@ -74,7 +99,7 @@ class _MapPageState extends State<MapPage> with OSMMixinObserver {
                   icon: Icon(
                     Icons.location_history_rounded,
                     color: Colors.red,
-                    size: 1000,
+                    size: 100,
                   ),
                 ),
                 directionArrowMarker: const MarkerIcon(
