@@ -38,17 +38,13 @@ class _MapPageState extends State<MapPage> with OSMMixinObserver {
         var position = mapController.listenerMapSingleTapping.value;
         if (position != null) {
           await mapController.addMarker(position,
-              markerIcon: const MarkerIcon(
-                  icon: Icon(
-                Icons.location_on,
-                color: Colors.blue,
-                size: 60,
-              ))
-              // angle: 1.1,
-              // iconAnchor: IconAnchor(
-              //   anchor: Anchor.top,
-              // )
-              );
+              markerIcon: MarkerIcon(
+
+                  // Add empty marker
+                  assetMarker: AssetMarker(
+                      image:
+                          const AssetImage("assets/images/lrc_marker_000.png"),
+                      scaleAssetImage: 3)));
         }
       }
     });
@@ -80,10 +76,10 @@ class _MapPageState extends State<MapPage> with OSMMixinObserver {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Map")),
-        body: OSMFlutter(
-            controller: mapController,
-            osmOption: OSMOption(
+      appBar: AppBar(title: const Text("Map")),
+      body: OSMFlutter(
+          controller: mapController,
+          osmOption: OSMOption(
               userTrackingOption: const UserTrackingOption(
                 enableTracking: true,
                 unFollowUser: false,
@@ -111,15 +107,7 @@ class _MapPageState extends State<MapPage> with OSMMixinObserver {
               ),
               roadConfiguration: const RoadOption(
                 roadColor: Colors.blueAccent,
-              ),
-              markerOption: MarkerOption(
-                  defaultMarker: const MarkerIcon(
-                icon: Icon(
-                  Icons.person_pin_circle,
-                  color: Colors.blue,
-                  size: 200,
-                ),
-              )),
-            )));
+              ))),
+    );
   }
 }
