@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:slugarbage/item_info_template.dart';
 import 'package:slugarbage/items.dart';
+import 'package:slugarbage/main.dart';
 
 class AllItemsPage extends StatelessWidget {
   const AllItemsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
     return Scaffold(
       appBar: AppBar(title: const Text("All Items")),
       body: Column(
@@ -20,10 +24,11 @@ class AllItemsPage extends StatelessWidget {
                 WidgetSpan(
                   child: TextButton(
                       onPressed: () {
+                        appState.onButtonPressed(key);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: ((context) => const Placeholder())));
+                                builder: ((context) => const ItemInfo())));
                       },
                       child: Text('$key: ',
                           style: const TextStyle(

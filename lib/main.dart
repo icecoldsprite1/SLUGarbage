@@ -65,6 +65,12 @@ class MyAppState extends ChangeNotifier {
     recents.add(item);
     notifyListeners();
   }
+
+  String pageItemName = '';
+  void onButtonPressed(String item) {
+    pageItemName = item;
+    notifyListeners();
+  }
 }
 
 class LoginPage extends StatelessWidget {
