@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slugarbage/all_items_page.dart';
 import 'package:slugarbage/items.dart';
 import 'package:slugarbage/main.dart';
 
@@ -51,7 +52,7 @@ class _SearchingBarState extends State<SearchingBar> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: ((context) => const MyHomePage())));
+                      builder: ((context) => const AllItemsPage())));
             },
             child: const Text('Show All Items'),
           )
