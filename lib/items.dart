@@ -11,9 +11,12 @@ class Items {
 final Map<String, dynamic> itemsList = {
   'Fruit': Items(
       type: 'Compost',
-      description: 'Composting fruits can add nutrients to soil'),
+      description: 'Composting fruits can add nutrients to soil',
+      image: Image.asset('assets/images/fruit.jpeg')),
   'Plastic Water Bottle': Items(
-      type: 'Recycle', description: 'Recycle these, make sure they are clean'),
+      type: 'Recycle',
+      description: 'Recycle these, make sure they are clean',
+      image: Image.asset('assets/images/plasticWaterBottle.jpeg')),
   'Battery': Items(
       type: 'Special',
       description: 'Check UCSC Environmental & Safety website'),

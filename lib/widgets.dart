@@ -9,7 +9,7 @@ class Header extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           heading,
-          style: const TextStyle(fontSize: 24),
+          style: const TextStyle(fontSize: 20),
         ),
       );
 }
@@ -22,7 +22,7 @@ class Paragraph extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         child: Text(
           content,
-          style: const TextStyle(fontSize: 18),
+          style: const TextStyle(fontSize: 16),
         ),
       );
 }
@@ -60,4 +60,32 @@ class StyledButton extends StatelessWidget {
         onPressed: onPressed,
         child: child,
       );
+}
+
+class RoundWidget extends StatelessWidget {
+  final String text;
+
+  const RoundWidget({super.key, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double margin = screenWidth * 0.1;
+    return Container(
+        margin: EdgeInsets.symmetric(horizontal: margin),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: const Offset(0, 1),
+            ),
+          ],
+        ),
+        child: Text(text, style: const TextStyle(fontSize: 16)));
+  }
 }
