@@ -2,6 +2,16 @@
 
 A new Flutter project.
 
+## How to Run
+
+Clone project
+
+Download Flutter extension on VS Code
+
+Go to main.dart and click start debugging
+
+Select a device like Chrome to run (maps do not work with Desktop devices)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
