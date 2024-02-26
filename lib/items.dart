@@ -22,5 +22,17 @@ final Map<String, dynamic> itemsList = {
       description: 'Check UCSC Environmental & Safety website'),
   'Pizza Box': Items(
       type: 'Landfill',
-      description: 'Boxes covered in grease and food should be thrown away')
+      description: 'Boxes covered in grease and food should be thrown away'),
+  'Napkins': Items(
+      type: 'Landfill', description: 'Used napkins should be thrown away'),
+  'Cardboard Box': Items(
+      type: 'Recycle',
+      description:
+          'Make sure it is clean first. Make sure the inside is empty. Break down the box so they are flat.'),
+  'Cooking Oil': Items(
+      type: 'Landfill',
+      description:
+          'After its cools down, throw it away, don\'t put it down the drain'),
+  'Metal Cans':
+      Items(type: 'Recycle', description: 'Empty out food and liquid first')
 };

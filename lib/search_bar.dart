@@ -36,7 +36,12 @@ class _SearchingBarState extends State<SearchingBar> {
                   ),
                   suffixIcon: IconButton(
                     icon: const Icon(Icons.search),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const AllItemsPage())));
+                    },
                   ),
                 ),
                 onChanged: (value) {
