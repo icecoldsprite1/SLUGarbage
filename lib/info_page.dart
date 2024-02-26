@@ -124,18 +124,18 @@ class _InfoPageState extends State<InfoPage>
           // For example:
           print('Button 4 on Tab 2 clicked!');
           appState.addPoints();
-          appState.addRecent('Recycling 4');
+          appState.addRecent('UCSC Recycling Instructions');
         },
         () {
           // Functionality for button 1 on Tab 2
           // For example:
           print('Button 5 on Tab 2 clicked!');
           appState.addPoints();
-          appState.addRecent('Recycling 5');
+          appState.addRecent('What happens to my recyclables?');
         },
         // Define other button actions for Tab 2 here
       ];
-      buttonNames = ['Bin Recyclabes', 'Recycling Symbols', 'Special Recyclabes', 'Recycling 4', 'Recycling 5'];
+      buttonNames = ['Bin Recyclabes', 'Recycling Symbols', 'Special Recyclabes', 'UCSC Recycling Instructions', 'What happens to my recyclables?'];
     } else if (tabNumber == 3) {
       buttonActions = [
         () {
