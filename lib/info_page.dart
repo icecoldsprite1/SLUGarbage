@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:slugarbage/buttons_info_template.dart';
 import 'package:slugarbage/main.dart';
 import 'package:slugarbage/search_bar.dart';
 
@@ -95,7 +96,13 @@ class _InfoPageState extends State<InfoPage>
         },
         // Define other button actions for Tab 1 here
       ];
-      buttonNames = ['Landfill 1', 'Landfill 2', 'Landfill 3', 'Landfill 4', 'Landfill 5'];
+      buttonNames = [
+        'Landfill 1',
+        'Landfill 2',
+        'Landfill 3',
+        'Landfill 4',
+        'Landfill 5'
+      ];
     } else if (tabNumber == 2) {
       buttonActions = [
         () {
@@ -104,6 +111,11 @@ class _InfoPageState extends State<InfoPage>
           print('Button 1 on Tab 2 clicked!');
           appState.addPoints();
           appState.addRecent('Bin Recyclabes');
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: ((context) =>
+                      const ButtonInfo(img: 'assets/images/recycle.png'))));
         },
         () {
           // Functionality for button 2 on Tab 2
@@ -135,7 +147,13 @@ class _InfoPageState extends State<InfoPage>
         },
         // Define other button actions for Tab 2 here
       ];
-      buttonNames = ['Bin Recyclabes', 'Recycling Symbols', 'Special Recyclabes', 'UCSC Recycling Instructions', 'What happens to my recyclables?'];
+      buttonNames = [
+        'Bin Recyclabes',
+        'Recycling Symbols',
+        'Special Recyclabes',
+        'UCSC Recycling Instructions',
+        'What happens to my recyclables?'
+      ];
     } else if (tabNumber == 3) {
       buttonActions = [
         () {
@@ -175,7 +193,13 @@ class _InfoPageState extends State<InfoPage>
         },
         // Define other button actions for Tab 3 here
       ];
-      buttonNames = ['Compost 1', 'Compost 2', 'Compost 3', 'Compost 4', 'Compost 5'];
+      buttonNames = [
+        'Compost 1',
+        'Compost 2',
+        'Compost 3',
+        'Compost 4',
+        'Compost 5'
+      ];
     }
 
     return Center(
@@ -186,7 +210,8 @@ class _InfoPageState extends State<InfoPage>
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
-              onPressed: buttonActions[index], // Assign onPressed function based on index
+              onPressed: buttonActions[
+                  index], // Assign onPressed function based on index
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),

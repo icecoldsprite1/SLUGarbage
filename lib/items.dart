@@ -34,5 +34,45 @@ final Map<String, dynamic> itemsList = {
       description:
           'After its cools down, throw it away, don\'t put it down the drain'),
   'Metal Cans':
-      Items(type: 'Recycle', description: 'Empty out food and liquid first')
+      Items(type: 'Recycle', description: 'Empty out food and liquid first'),
+  'Glass Bottles': Items(
+      type: 'Recycle',
+      description:
+          'Rinse the bottles, remove caps, and recycle to reduce environmental impact'),
+  'Paper Towel Rolls': Items(
+      type: 'Recycle',
+      description:
+          'Empty rolls can be recycled; ensure they are clean before disposing of them'),
+  'Electronics': Items(
+      type: 'Special',
+      description:
+          'Check local electronic waste disposal guidelines or recycling programs'),
+  'Aluminum Foil': Items(
+      type: 'Recycle',
+      description:
+          'Clean and crumpled aluminum foil can be recycled with other metal items'),
+  'Coffee Grounds': Items(
+      type: 'Compost',
+      description:
+          'Used coffee grounds are great for composting; add them to your compost bin'),
+  'Plastic Bags': Items(
+      type: 'Recycle',
+      description:
+          'Many grocery stores accept plastic bags for recycling; check local collection points'),
+  'Glass Jars': Items(
+      type: 'Recycle',
+      description:
+          'Remove labels, rinse, and recycle glass jars to promote sustainability'),
+  'Light Bulbs': Items(
+      type: 'Special',
+      description:
+          'Dispose of light bulbs properly, following local guidelines or recycling programs'),
+  'Clothing': Items(
+      type: 'Donate or Recycle',
+      description:
+          'Consider donating wearable items; damaged textiles can be recycled'),
+  'Printer Cartridges': Items(
+      type: 'Special',
+      description:
+          'Many office supply stores accept used printer cartridges for recycling')
 };
