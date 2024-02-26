@@ -8,9 +8,12 @@ Clone project
 
 Download Flutter extension on VS Code
 
+In terminal, type `flutter pub get` in the folder
+
+In the bottom right corner, theres a button with a device name. Click on it, select a device like Chrome to run (maps do not work with Desktop devices)
+
 Go to main.dart and click start debugging
 
-Select a device like Chrome to run (maps do not work with Desktop devices)
 
 ## Getting Started
 
