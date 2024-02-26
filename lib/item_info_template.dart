@@ -35,15 +35,15 @@ class ItemInfo extends StatelessWidget {
         Container(
             margin: EdgeInsets.symmetric(horizontal: margin),
             padding: const EdgeInsets.all(20),
-            child: Paragraph('Summary:\n${item.description}')),
+            child: Paragraph('Description:\n${item.description}')),
         Container(
             margin: EdgeInsets.symmetric(horizontal: margin),
             padding: const EdgeInsets.all(20),
-            child: Paragraph('Instructions:\n${item.description}')),
+            child: Paragraph('Summary:\n${item.summary}')),
         Container(
             margin: EdgeInsets.symmetric(horizontal: margin),
             padding: const EdgeInsets.all(20),
-            child: Paragraph('Bin Locations:\n${item.description}')),
+            child: Paragraph('Instructions:\n${item.instructions}')),
       ]),
     );
   }
