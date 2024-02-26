@@ -123,6 +123,11 @@ class _InfoPageState extends State<InfoPage>
           print('Button 2 on Tab 2 clicked!');
           appState.addPoints();
           appState.addRecent('Recycling Symbols');
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: ((context) => const ButtonInfo(
+                      img: 'assets/images/recycleSymbols.png'))));
         },
         () {
           // Functionality for button 1 on Tab 2

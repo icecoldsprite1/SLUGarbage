@@ -6,12 +6,12 @@ class ButtonInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var myHeight = MediaQuery.of(context).size.height * 0.4;
-    var myWidth = MediaQuery.of(context).size.width * 0.7;
+    var myHeight = MediaQuery.of(context).size.height * 0.9;
+    var myWidth = MediaQuery.of(context).size.width * 0.9;
     double screenWidth = MediaQuery.of(context).size.width;
     double margin = screenWidth * 0.1;
     return Scaffold(
-        appBar: AppBar(title: const Text('HELP ME PLEASE')),
+        appBar: AppBar(title: const Text('SLUGarbage')),
         body: ListView(
           children: [
             Center(
